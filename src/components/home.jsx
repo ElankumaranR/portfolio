@@ -12,10 +12,10 @@ function Home(){
                 <h1 className="home_title">Web Developer +</h1>
                 <p className="home_desc">Passionate web developer with expertise in creating responsive, user-friendly websites using the latest front-end and back-end technologies. Let's build something amazing together!</p>
                 <div className="home_link">
-                <FontAwesomeIcon icon="fa-brands fa-linkedin" className="h_link" />
-                <FontAwesomeIcon icon="fa-brands fa-github" className="h_link" />
-                <FontAwesomeIcon icon="fa-brands fa-instagram" className="h_link"  />
-                <FontAwesomeIcon icon="fa-brands fa-facebook"className="h_link"/>
+                <a href="https://www.linkedin.com/in/elan-kumaran-a92b61303/"><FontAwesomeIcon icon="fa-brands fa-linkedin" className="h_link" /></a>
+                <a href="https://github.com/ElankumaranR"><FontAwesomeIcon icon="fa-brands fa-github" className="h_link" /></a>
+                <a href="https://www.instagram.com/_eln_kmrn_/"><FontAwesomeIcon icon="fa-brands fa-instagram" className="h_link"  /></a>
+                <a href="https://www.facebook.com/elankumaran.elankumaran.948/"><FontAwesomeIcon icon="fa-brands fa-facebook"className="h_link"/></a>
                 </div>
                 <button className="cv">Download CV</button>
                 </div>

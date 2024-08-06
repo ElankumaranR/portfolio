@@ -11,6 +11,10 @@ h1,h2,h3,h6,p{
 .g_icon{
     font-size: 80px;
 }
+.h_link{
+    color: #e8e9ed;
+    transition: all ease-in 0.5s;
+}
 .nav{
     width: 100%;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
@@ -104,7 +108,7 @@ h1,h2,h3,h6,p{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all ease-in 1.5s;
+    
 }
 .h_link:hover{
     color: blueviolet;
@@ -427,4 +431,194 @@ h1,h2,h3,h6,p{
     flex-direction: column;
     align-items: start;
     gap: 30px;
+}
+
+@media (max-width: 767px) {
+    .nav {
+        display: none; 
+    }
+    
+    .header {
+        background: #333;
+        color: #fff;
+        padding: 20px; 
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 36px;
+        margin: 0; 
+    }
+
+    .about, .skill {
+        padding-top: 20px;
+        padding-bottom: 60px;
+        width: 90%;
+        position: static; 
+        box-shadow: none; 
+    }
+    
+    .about_content, .skill_content {
+        display: block; 
+    }
+    .home_content{
+        flex-direction:column-reverse;
+    }
+    .home_title {
+        font-size: 50px;
+    }
+    
+    .home_text {
+        width: 100%;
+        margin-top: 20px;
+    }
+        
+    .contact {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .form {
+        width: 90%;
+    }
+    
+    .form-group input, .form-group textarea {
+        width: 100%;
+    }
+    
+    .con_f button {
+        width: 100%;
+        font-size: large;
+    }
+    
+    .Proj_content {
+        flex-direction: column;
+    }
+    
+    .proj_comp {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .proj_img {
+        height: 150px;
+    }
+
+    
+    .home_desc, .info-detials {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nav {
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+    
+    .nav_items {
+        gap: 30px;
+    }
+    
+    .home_title {
+        font-size: 60px;
+    }
+    
+    
+    .about, .skill, .proj, .con {
+        padding-top: 30px;
+        padding-bottom: 80px;
+        width: 90%;
+    }
+    
+    .skill, .proj {
+        gap: 60px;
+        padding-top: 70px;
+        padding-bottom: 120px;
+    }
+    
+    .stud, .ach {
+        gap: 40px;
+    }
+    
+    .stud_i, .ach_i, .con_i {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact {
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .form {
+        width: 80%;
+    }
+    
+    .form-group input, .form-group textarea {
+        width: 100%;
+    }
+    
+    .con_f button {
+        width: 200px;
+        font-size: larger;
+    }
+    
+    .Proj_content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .proj_comp {
+        flex: 1 1 calc(50% - 20px);
+    }
+    
+    .proj_img {
+        height: 180px;
+    }
+}
+@media (max-width: 1024px) {
+    .cv {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 30%;
+    }
+
+    .h_link {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        margin: 0 3px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cv {
+        font-size: 12px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        
+    }
+    .home_link{
+        gap:20px;
+    }
+    .h_link {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        margin: 0 2px;
+    }
+}
+@media (max-width: 1024px) {
+    .img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .img {
+        width: 200px;
+    }
 }
