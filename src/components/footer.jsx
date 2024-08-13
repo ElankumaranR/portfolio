@@ -29,7 +29,7 @@ function Footer() {
             </div>
             <div className="form">
             <h2 className="con_tit">Lets work together!</h2>
-                <form className="con_f">
+                <form action="http://localhost:8080/" method="POST"  className="con_f">
                     <div className="form-group">
                         <label htmlFor="name">Name:</label>
                         <input type="text" id="name" name="name" required />
