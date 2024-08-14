@@ -622,3 +622,33 @@ h1,h2,h3,h6,p{
         width: 200px;
     }
 }
+
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-gif{
+    width: 70%;
+}
+
+@media (max-width: 1024px) {
+    .loading-gif {
+        height: 80%;
+        width: 120%;
+    }
+}
+.App {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.App.content-visible {
+    opacity: 1;
+}
