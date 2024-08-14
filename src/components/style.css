@@ -640,8 +640,8 @@ h1,h2,h3,h6,p{
 
 @media (max-width: 1024px) {
     .loading-gif {
-        height: 80%;
-        width: 120%;
+        height: 100%;
+        width: 140%;
     }
 }
 .App {
