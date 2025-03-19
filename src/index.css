@@ -1,6 +1,6 @@
 body ,html {
   margin: 10px;
-  background-color: white;
+  background-color: revert;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
