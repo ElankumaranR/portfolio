@@ -1,37 +1,60 @@
 pipeline {
-agent {
-        docker { image 'node:18-alpine' }
+    agent any
+
+    environment {
+        NODEJS_VERSION = 'nodejs-18'  // Set Node.js version from Jenkins plugin
+        IMAGE_NAME = 'my-react-app'  // Change this to your app name
+        CONTAINER_NAME = 'react-app-container'
+    }
+
+    tools {
+        nodejs "${NODEJS_VERSION}"
     }
 
     stages {
-        stage('Cleanup Workspace') {
+        stage('Checkout Code') {
             steps {
-                sh 'rm -rf portfolio'
+                git 'https://github.com/ElankumaranR/portfolio.git'
             }
         }
 
-        stage('Clone Repository') {
+        stage('Install Dependencies') {
             steps {
-                git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/ElankumaranR/portfolio.git'
+                sh 'npm install'
+            }
+        }
+
+        stage('Build React App') {
+            steps {
+                sh 'npm run build'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t portfolio-app .'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
-        stage('Deploy Container') {
+        stage('Run Docker Container') {
             steps {
-                script {
-                    sh '''
-                    docker stop portfolio-app || true
-                    docker rm portfolio-app || true
-                    docker run -d --name portfolio-app -p 3000:3000 portfolio-app
-                    '''
-                }
+                sh 'docker run -d -p 3000:3000 --name $CONTAINER_NAME $IMAGE_NAME'
             }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh 'docker ps -a'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed!'
+        }
+        failure {
+            echo 'Build failed. Check logs for errors.'
         }
     }
 }
