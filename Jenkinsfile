@@ -35,18 +35,26 @@ pipeline {
                 sh 'docker build -t $IMAGE_NAME .'
             }
         }
-
-        stage('Run Docker Container') {
-            steps {
-                sh 'docker run -d -p 3000:3000 --name $CONTAINER_NAME $IMAGE_NAME'
-            }
-        }
-
         stage('Cleanup') {
             steps {
-                sh 'docker ps -a'
+                script {
+                    // Stop and remove the existing container if it exists
+                    sh 'docker stop react-app-container || true'
+                    sh 'docker rm react-app-container || true'
+                }
             }
         }
+        stage('Build & Run') {
+            steps {
+                script {
+                    // Build and start the container
+                    sh 'docker build -t portfolio-app .'
+                    sh 'docker run -d -p 3000:3000 --name $CONTAINER_NAME $IMAGE_NAME'
+                }
+            }
+        }
+
+ 
     }
 
     post {
