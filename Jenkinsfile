@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         NODEJS_VERSION = 'nodejs-18'  // Set Node.js version from Jenkins plugin
-        IMAGE_NAME = 'my-react-app'  // Change this to your app name
+        IMAGE_NAME = 'portfolio-app'  // Change this to your app name
         CONTAINER_NAME = 'react-app-container'
     }
 
